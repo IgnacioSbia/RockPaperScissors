@@ -1,0 +1,40 @@
+.rulesPageRulesList{
+    list-style: none;
+    padding: 1%;
+}
+.rulesPageMain{
+    position: absolute;
+    height: fit-content;
+    width: 350px;
+    border-radius: 10px;
+    color: rgb(130, 137, 197);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid rgb(255, 255, 255);
+    background-color: white
+}
+.rulesPageClose{
+    
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 1%;
+    padding-right: 1%;
+}
+.ruleItem{
+    padding-bottom: 5%;
+}
+.rulesPageCloseModal{
+    color: rgb(130, 137, 197);
+    border-radius: 5px;
+    width: 24px;
+    background: none;
+    border: 2px solid rgb(177, 177, 177);
+}
+.rulesPageCloseModal:hover{
+    color: rgb(130, 137, 197);
+    animation: ease-in-out;
+    background-color: white;
+    border: 2px solid rgb(105, 105, 105);
+}
