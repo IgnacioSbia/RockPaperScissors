@@ -9,7 +9,7 @@
   flex-direction: column;
   align-items: center;
   color: white;
-  background-color: rgb(60, 60, 112);
+  background: radial-gradient(ellipse at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
 }
 .rockPaperScissorsPageModal{
   display: flex;
@@ -43,4 +43,27 @@
   padding: 1%;
   margin: 1%;
   width: 50%;
+}
+.rockPaperScissorsPlayground{
+  margin-top: 5%;
+  width: 50%;
+}
+.rockPaperScissorsPaperRock{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.rockPaperScissorsPaper{
+  border-radius: 100%;
+  background-color: white;
+  width: 11.5%;
+  height: 100px;
+  border: 11px solid hsl(230, 89%, 65%);
+}
+.rockPaperScissorsScissors{
+  border-radius: 100%;
+  background-color: white;
+  width: 11.5%;
+  height: 100px;
+  border: 11px solid hsl(40, 84%, 53%);
 }
