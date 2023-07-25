@@ -47,11 +47,16 @@
 .rockPaperScissorsPlayground{
   margin-top: 5%;
   width: 50%;
+  background-image: url('../../public/bg-triangle.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-position-y: 30px;
+  background-size: 40% 85%;
 }
 .rockPaperScissorsPaperRock{
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 .rockPaperScissorsPaper{
   border-radius: 100%;
@@ -66,4 +71,11 @@
   width: 11.5%;
   height: 100px;
   border: 11px solid hsl(40, 84%, 53%);
+}
+.rockPaperScissorsRock{
+  border-radius: 100%;
+  background-color: white;
+  width: 11.5%;
+  height: 100px;
+  border: 11px solid hsl(349, 70%, 56%);
 }

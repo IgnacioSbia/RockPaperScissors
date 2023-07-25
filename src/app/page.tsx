@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import Page from "./rules/page";
 import rock from '../../public/icon-rock.svg';
 import scissors from '../../public/icon-scissors.svg';
@@ -8,6 +8,24 @@ import Image from 'next/image';
 
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
+  const [winner, setWinner] = useState('');
+  const [playerChoice, setPlayerChoice] = useState('');
+  const [computerChoice, setComputerChoice] = useState<any>('')
+  const [playerScore, setPlayerScore] = useState()
+  const options = ['Rock','Scissors','Paper']
+
+  const computer = (min:number,max:number)=>{
+    return Math.floor(Math.random() * (max - min +1) +min)
+  }
+  const game = (choice:any)=>{
+    setPlayerChoice(choice)
+    computer(0, options.length)
+    
+  }
+ 
+  console.log(computer(0, options.length))
+
+
   return (
     <>
     <main className='rockPaperScissorsMainPage'>
