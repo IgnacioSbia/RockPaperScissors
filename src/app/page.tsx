@@ -11,19 +11,24 @@ export default function Home() {
   const [winner, setWinner] = useState('');
   const [playerChoice, setPlayerChoice] = useState('');
   const [computerChoice, setComputerChoice] = useState<any>('')
-  const [playerScore, setPlayerScore] = useState()
+  const [playerScore, setPlayerScore] = useState<any>(0)
   const options = ['Rock','Scissors','Paper']
 
   const computer = (min:number,max:number)=>{
-    return Math.floor(Math.random() * (max - min +1) +min)
+    return Math.floor(Math.random() * (max - min ) +min)
   }
   const game = (choice:any)=>{
-    setPlayerChoice(choice)
-    computer(0, options.length)
-    
+    setPlayerChoice(choice);
+    setComputerChoice(options[computer(0, options.length)]);
+    if((playerChoice == 'Rock' && computerChoice == 'Scissors') || (playerChoice == 'Scissors' && computerChoice == 'Paper') || (playerChoice == 'Paper' && computerChoice == 'Rock')){
+      setWinner('Player')
+      setPlayerScore(playerScore+1)
+    }else{
+      setWinner('Computer')
+    }
   }
  
-  console.log(computer(0, options.length))
+  console.log(options[computer(0, options.length)])
 
 
   return (
