@@ -36,8 +36,8 @@
 }
 .rockPaperScissorsPageTitleWithScore{
   display: flex;
-  align-items: flex-start;
-  flex-direction: column;
+  justify-content: space-between;
+  flex-direction: row;
   border: 3px solid white;
   border-radius: 10px;
   padding: 1%;
@@ -78,4 +78,22 @@
   width: 11.5%;
   height: 100px;
   border: 11px solid hsl(349, 70%, 56%);
+}
+.rockPaperScissorsPageTitle{
+  text-align: start;
+}
+.rockPaperScissorsPageScore{
+  background-color: white;
+  width: 15%;
+  border-radius: 8px;
+}
+.rockPaperScissorsPageScoreTitle{
+  color: blue;
+  font-size: 18px;
+  padding-top: 6%;
+}
+.rockPaperScissorsPageScoreScore{
+  padding-top: 5%;
+  font-size: 32px;
+  color: black;
 }
