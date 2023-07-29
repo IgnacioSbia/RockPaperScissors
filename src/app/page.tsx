@@ -21,15 +21,26 @@ export default function Home() {
   const game = (choice:any)=>{
     setPlayerChoice(choice);
     setComputerChoice(options[computer(0, options.length)]);
+  }
+  useEffect(()=>{
     if((playerChoice == 'Rock' && computerChoice == 'Scissors') || (playerChoice == 'Scissors' && computerChoice == 'Paper') || (playerChoice == 'Paper' && computerChoice == 'Rock')){
       setWinner('Player')
       setPlayerScore(playerScore+1)
+    }else if(playerChoice == computerChoice){
+      setWinner('Draw')
     }else{
-      setWinner('Computer')
+      setWinner('The House')
     }
+  },[playerChoice,computerChoice])
+  const playAgain = (e:any)=>{
+    e.preventDefault();
+    setComputerChoice('');
+    setPlayerChoice('');
+    setWinner('')
   }
+  console.log(playerChoice)
+  console.log(computerChoice)
   console.log(winner)
-
 
   return (
     <>
@@ -53,27 +64,32 @@ export default function Home() {
         
         {playerChoice && computerChoice ?
         <div>
-          <aside>
+          {/*<aside>
             <button className={`rockPaperScissors${playerChoice}`}><Image src={`/${playerChoice.toLowerCase}`} width={38} alt={`${playerChoice}`} height={38}/></button>
             <h2>You picked</h2>
           </aside>
           <aside>
-          <button className={`rockPaperScissors${computerChoice}`}><Image src={`/${computerChoice.toLowerCase}`} width={38} alt={`${computerChoice}` }height={38}/></button>
-          <h2>The house picked</h2>
+            <button className={`rockPaperScissors${computerChoice}`}><Image src={`/${computerChoice.toLowerCase}`} width={38} alt={`${computerChoice}` }height={38}/></button>
+            <h2>The house picked</h2>
+          </aside> */}
+          <aside>
+            <h1>The winner is: {winner}</h1>
           </aside>
+          <button className='rockPaperScissorsPagePlayAgainButton' onClick={(e)=>playAgain(e)}>PLAY AGAIN</button>
         </div>
 
-         :<></>}
+         :
+         <section className='rockPaperScissorsPlayground'>
+         <aside className='rockPaperScissorsPaperRock'>
+           <button className='rockPaperScissorsPaper' onClick={()=>game('Paper')}><Image src={paper} width={38} alt='paper' /></button>
+           <button className='rockPaperScissorsScissors' onClick={()=>game('Scissors')}><Image src={scissors}  width={38} alt='scissors' /></button>
+         </aside>
+         <button className='rockPaperScissorsRock' onClick={()=>game('Rock')}><Image src={rock} width={38} alt='rock' /></button>
+       </section>}
     
 
       {/*Playground*/}
-      <section className='rockPaperScissorsPlayground'>
-        <aside className='rockPaperScissorsPaperRock'>
-          <button className='rockPaperScissorsPaper' onClick={()=>game('Paper')}><Image src={paper} width={38} alt='paper' /></button>
-          <button className='rockPaperScissorsScissors' onClick={()=>game('Scissors')}><Image src={scissors}  width={38} alt='scissors' /></button>
-        </aside>
-        <button className='rockPaperScissorsRock' onClick={()=>game('Scissors')}><Image src={rock} width={38} alt='rock' /></button>
-      </section>
+      
       <aside className='rockPaperScissorsPageModalButton'>
        {showModal ? '' : <button onClick={()=>setShowModal(!showModal)} className='rockPaperScissorsModalButton'>Rules</button>}
       </aside>

@@ -97,3 +97,17 @@
   font-size: 32px;
   color: black;
 }
+.rockPaperScissorsPagePlayAgainButton{
+  width: 124px;
+  font-size: 18px;
+  color: white;
+  background: none;
+  border-radius: 5px;
+  padding: 3%;
+  border: 2px solid white;
+}
+.rockPaperScissorsPagePlayAgainButton:hover{
+  color: black;
+  background-color: white;
+  border: 2px solid black;
+}
