@@ -63,29 +63,31 @@ export default function Home() {
       
         
         {playerChoice && computerChoice ?
-        <div>
-          {/*<aside>
-            <button className={`rockPaperScissors${playerChoice}`}><Image src={`/${playerChoice.toLowerCase}`} width={38} alt={`${playerChoice}`} height={38}/></button>
-            <h2>You picked</h2>
-          </aside>
+        (<div>
+          <section className='rockPaperScissorsPlayerComputerChoice'>
+            <aside className='rockPaperScissorsPlayerComputerChoicePlayer'>
+              <button className={`rockPaperScissors${playerChoice}`} id='rockPaperScissorsPlayerChoices'>{playerChoice == 'Paper' ? <Image src={paper} width={38} alt='Paper' /> : playerChoice == 'Rock' ? <Image src={rock} width={38} alt='rock' />: playerChoice == 'Scissors' ? <Image src={scissors}  width={38} alt='scissors' />:''}</button>
+              <h2>You picked</h2>
+            </aside>
+            <aside className='rockPaperScissorsPlayerComputerChoiceComputer'>
+              <button className={`rockPaperScissors${computerChoice}`} id='rockPaperScissorsComputerChoices'>{computerChoice == 'Paper'? <Image src={paper} width={38} alt='Paper' /> : computerChoice == 'Rock' ? <Image src={rock} width={38} alt='rock' />:computerChoice == 'Scissors' ? <Image src={scissors}  width={38} alt='scissors' />: ''}</button>
+              <h2>The house picked</h2>
+            </aside>
+          </section> 
           <aside>
-            <button className={`rockPaperScissors${computerChoice}`}><Image src={`/${computerChoice.toLowerCase}`} width={38} alt={`${computerChoice}` }height={38}/></button>
-            <h2>The house picked</h2>
-          </aside> */}
-          <aside>
-            <h1>The winner is: {winner}</h1>
+            <h1>{winner == 'Draw' ? 'Draw!' : `The winner is: ${winner}`}</h1>
           </aside>
           <button className='rockPaperScissorsPagePlayAgainButton' onClick={(e)=>playAgain(e)}>PLAY AGAIN</button>
-        </div>
+        </div>)
 
-         :
+         :(
          <section className='rockPaperScissorsPlayground'>
          <aside className='rockPaperScissorsPaperRock'>
            <button className='rockPaperScissorsPaper' onClick={()=>game('Paper')}><Image src={paper} width={38} alt='paper' /></button>
            <button className='rockPaperScissorsScissors' onClick={()=>game('Scissors')}><Image src={scissors}  width={38} alt='scissors' /></button>
          </aside>
          <button className='rockPaperScissorsRock' onClick={()=>game('Rock')}><Image src={rock} width={38} alt='rock' /></button>
-       </section>}
+       </section>)}
     
 
       {/*Playground*/}
